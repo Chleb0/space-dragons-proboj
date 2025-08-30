@@ -1,0 +1,7 @@
+[proboj] 
+[proboj] 
+[proboj] 
+[proboj] comment
+[proboj] process terminated
+ exit: 0
+ err: <nil>

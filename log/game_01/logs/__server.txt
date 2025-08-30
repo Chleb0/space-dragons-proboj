@@ -1,0 +1,29 @@
+sex je super
+%@@AA@BA@
+pA@@@@@A>
+%@@AA@BA@
+bAA@@AA@A
+,@B@@@B@@
+[A@@@@@AB
+-@@A@@@AC
+N@AA@B@@@
+!@C@A@@B?
+bAA@@AA@A
+!@C@A@@B?
+bAA@@AA@A
+,@B@@@B@@
+U@@@@@A@A
+!@C@A@@B?
+U@@@@@A@A
+!@C@A@@B?
+U@@@@@A@A
+player2 obtained a dragon
+player1 obtained a dragon
+player1 obtained a dragon
+player1 obtained a dragon
+player2 obtained a dragon
+player2 obtained a dragon
+player1 obtained a dragon
+[proboj] process terminated
+ exit: 0
+ err: <nil>
