@@ -12,31 +12,10 @@
 using namespace std;
 
 /*
-Handles the status returned by the runner when logging to a player.
-*/
-void handleLogStatus(Player* player) {
-    string status; cin >> status;
-    cerr << "log status: " << status << endl;
-
-    string errmsg = "";
-    string line;
-    do {
-        getline(cin, line);
-        errmsg += line + "\n";
-    } while (line != ".");
-
-    if (status != "OK")
-    {
-        player->running = false;
-    }
-}
-
-/*
 Handles the status returned by the runner when communicating with player.
 */
 void handleStatus(Player* player) {
     string status; cin >> status;
-    cerr << "message status: " << status << endl;
 
     string errmsg = "";
     string line;
@@ -57,7 +36,6 @@ Handles and returns the players answer to a query.
 */
 string handleAnswer(Player* player) {
     string status; cin >> status;
-    cerr << "status: " << status << endl;
 
     if (status != "OK")
     {
@@ -87,19 +65,15 @@ string handleAnswer(Player* player) {
 /*
 Sends the message to the player's stdin.
 */
-void sendToPlayer(Player* player, const string message) {
+void sendToPlayer(Player* player, const string message, const string comment) {
     if (!player->running)
     {
         return;
     }
     
-    cout << "TO PLAYER " << player->playerName << endl;
+    cout << "TO PLAYER " << player->playerName << " " << comment << endl;
     cout << message << endl;
     cout << "." << endl;
-
-    cerr << "TO PLAYER " << player->playerName << endl;
-    cerr << message << endl;
-    cerr << "." << endl;
     handleStatus(player);
 }
 
@@ -107,9 +81,9 @@ void sendToPlayer(Player* player, const string message) {
 /*
 Sends the message to stdin to all players.
 */
-void sendAll(vector<Player> &players, const string message) {
+void sendAll(vector<Player> &players, const string message, const string comment) {
     for (auto& player : players) {
-        sendToPlayer(&player, message);
+        sendToPlayer(&player, message, comment);
     }
 }
 
@@ -125,9 +99,6 @@ string readCard(Player* player) {
     
     cout << "READ PLAYER " << player->playerName << endl;
     cout << "." << endl;
-
-    cerr << "READ PLAYER " << player->playerName << endl;
-    cerr << "." << endl;
     return handleAnswer(player);
 }
 
@@ -143,9 +114,8 @@ void draftFromDeck(Player* player, vector<Card> &deck) {
     {
         cards += deck[i].ID + "\n";
     }
-    sendToPlayer(player, cards);
-    // Sleep for a short duration to avoid overwhelming the player process
-    //this_thread::sleep_for(chrono::milliseconds(1000));
+    string comment = "Picking from deck with the size of: " + to_string(deck.size());
+    sendToPlayer(player, cards, comment);
     string choice; choice = readCard(player);
 
     player->pickCard(deck, choice);

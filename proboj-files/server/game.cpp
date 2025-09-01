@@ -112,8 +112,8 @@ struct Game
                 iter = iter->next_player;
             }
 
-            sendToPlayer(current, player_config);
-            sendToPlayer(current, config);
+            sendToPlayer(current, player_config, "Sending player configuration");
+            sendToPlayer(current, config, "Sending game configuration");
         }
         
     }
@@ -158,9 +158,10 @@ struct Game
 
         // Send the initial round configuration
         Dragon dragon = dragon_deck.back();
+        dragon_deck.pop_back();
         Player* playing = first_player;
-        sendAll(players, playing->playerName);
-        sendAll(players, dragon.ID);
+        sendAll(players, playing->playerName, "Sending beggining player this round: "+playing->playerName);
+        sendAll(players, dragon.ID, "Sending the dragon for this round: "+dragon.ID);
 
         Player* winning = first_player;
         vector<pair<Card, Player*>> played_cards = {};
@@ -171,7 +172,8 @@ struct Game
         {
             Card played_card = playCardOnTurn(playing);
             played_cards.push_back({played_card, playing});
-            sendAll(players, played_card.ID);
+            sendAll(players, played_card.ID, playing->playerName+" played card "+played_card.ID);
+            cerr << playing->playerName+" played card "+played_card.ID << endl;
 
             if (played_card.value > highest) winning = playing; highest = played_card.value;
             playing = playing->next_player;
@@ -195,6 +197,7 @@ struct Game
         Player* starting = &players[0];
         for (int i = 0; i < rounds; i++)
         {
+            cerr << endl << "ROUND " << i+ 1 << endl;
             starting = round(starting);
         }
     }
@@ -337,7 +340,6 @@ struct Game
 };
 
 int main() {
-    cerr << "sex je super" << endl;
     Game game = Game();
     game.setup_game();
     game.draft();

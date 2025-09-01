@@ -1,99 +1,58 @@
-[proboj] 
-[proboj] 
-[proboj] 
-Cleared comms with: .
-here xd
-Cleared comms with: .
-here 2 xd
-You picked card: bAA@@@@A?
-Cleared comms with: .
-[proboj] 
-You picked card: ]@A@@@@@>
-Cleared comms with: .
-[proboj] 
-You picked card: 9@B@@@@C>
-Cleared comms with: .
-[proboj] 
-You picked card: X@@@@@@AA
-Cleared comms with: .
-[proboj] 
-You picked card: M@@@AA@A@
-Cleared comms with: .
-[proboj] 
-You picked card: m@@@@A@@?
-Cleared comms with: .
-[proboj] 
-You picked card: e@@@@A@@A
-Cleared comms with: .
-[proboj] 
-You picked card: '@@@B@@AB
-Cleared comms with: .
-[proboj] 
-You picked card: N@@@@@@@C
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-You picked a card which was not in your hand. You played m@@@@A@@? instead.
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-You picked a card which was not in your hand. You played e@@@@A@@A instead.
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-You picked a card which was not in your hand. You played M@@@AA@A@ instead.
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-You picked a card which was not in your hand. You played ]@A@@@@@> instead.
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-You picked a card which was not in your hand. You played N@@@@@@@C instead.
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-You picked a card which was not in your hand. You played 9@B@@@@C> instead.
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
-You picked a card which was not in your hand. You played bAA@@@@A? instead.
-[proboj] 
-Cleared comms with: .
-[proboj] 
-Cleared comms with: .
+[proboj] Sending player configuration
+[proboj] Sending game configuration
+[proboj] Picking from deck with the size of: 9
+You picked card: E@@A@@@@@
+[proboj] Picking from deck with the size of: 8
+You picked card: \@@@@@A@>
+[proboj] Picking from deck with the size of: 7
+You picked card: PAA@@@@@C
+[proboj] Picking from deck with the size of: 6
+You picked card: "@@AA@AAB
+[proboj] Picking from deck with the size of: 5
+You picked card: #@@B@A@@B
+[proboj] Picking from deck with the size of: 4
+You picked card: 7@A@@@A@C
+[proboj] Picking from deck with the size of: 3
+You picked card: XAA@@@A@B
+[proboj] Picking from deck with the size of: 2
+You picked card: kAA@@AA@?
+[proboj] Picking from deck with the size of: 1
+You picked card: /@@A@@@@D
+[proboj] Sending beggining player this round: player1
+[proboj] Sending the dragon for this round: @A@I
+[proboj] player1 played card J@@@@@@@B
+You picked a card which was not in your hand. You played "@@AA@AAB instead.
+[proboj] player2 played card "@@AA@AAB
+[proboj] Sending beggining player this round: player1
+[proboj] Sending the dragon for this round: @@AI
+[proboj] player1 played card 8@@@A@@BB
+You picked a card which was not in your hand. You played PAA@@@@@C instead.
+[proboj] player2 played card PAA@@@@@C
+[proboj] Sending beggining player this round: player2
+[proboj] Sending the dragon for this round: @@@K
+You picked a card which was not in your hand. You played \@@@@@A@> instead.
+[proboj] player2 played card \@@@@@A@>
+[proboj] player1 played card _@@@AB@@?
+[proboj] Sending beggining player this round: player1
+[proboj] Sending the dragon for this round: @@@H
+[proboj] player1 played card I@@@@@B@B
+You picked a card which was not in your hand. You played #@@B@A@@B instead.
+[proboj] player2 played card #@@B@A@@B
+[proboj] Sending beggining player this round: player1
+[proboj] Sending the dragon for this round: @AAH
+[proboj] player1 played card $@AAA@@@A
+You picked a card which was not in your hand. You played /@@A@@@@D instead.
+[proboj] player2 played card /@@A@@@@D
+[proboj] Sending beggining player this round: player2
+[proboj] Sending the dragon for this round: @@@J
+You picked a card which was not in your hand. You played 7@A@@@A@C instead.
+[proboj] player2 played card 7@A@@@A@C
+[proboj] player1 played card A@@A@@B@>
+[proboj] Sending beggining player this round: player1
+[proboj] Sending the dragon for this round: @@AH
+[proboj] player1 played card <@C@@@@@@
+You picked a card which was not in your hand. You played kAA@@AA@? instead.
+[proboj] player2 played card kAA@@AA@?
 [proboj] process terminated
  exit: 0
  err: <nil>

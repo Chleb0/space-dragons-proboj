@@ -56,20 +56,20 @@ class Player
     If there is no such card, picks a random card.
     */
     void pickCard(vector<Card> &cards, const string& cardID) {
-        auto card = std::find_if(cards.begin(), cards.end(), [&](const Card& c) { return c.ID == cardID; });
+        auto card = find_if(cards.begin(), cards.end(), [&](const Card& c) { return c.ID == cardID; });
 
         // Invalid card ID was given, pick a random one
         if (card == cards.end()) {
             if (cards.empty()) return;
-            static std::random_device rd;
-            static std::mt19937 gen(rd());
-            std::uniform_int_distribution<> dis(0, cards.size() - 1);
+            static random_device rd;
+            static mt19937 gen(rd());
+            uniform_int_distribution<> dis(0, cards.size() - 1);
             card = cards.begin() + dis(gen);
         }
 
+        cerr << "Player " << playerName << " picked card: " << card->ID << endl;
         hand.push_back(*card);
         cards.erase(card);
-        cerr << card->ID << endl;
     }
 
     /*
@@ -83,9 +83,9 @@ class Player
 
         // If not found, pick a random card
         if (card == hand.end()) {
-            static std::random_device rd;
-            static std::mt19937 gen(rd());
-            std::uniform_int_distribution<> dis(0, hand.size() - 1);
+            static random_device rd;
+            static mt19937 gen(rd());
+            uniform_int_distribution<> dis(0, hand.size() - 1);
             card = hand.begin() + dis(gen);
         }
 
@@ -128,7 +128,7 @@ class Player
         morale_sum += dragon.morale;
         research_sum += dragon.research;
 
-        cerr << playerName << " obtained a dragon" << endl;
+        cerr << playerName << " won the dragon "+dragon.ID << endl;
     }
 
     /*

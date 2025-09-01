@@ -8,6 +8,14 @@
     "player2": {
       "command": "C:/Users/Sebik/Documents/GitHub/space-dragons-proboj/proboj-files/player/player2.exe",
       "language": "cpp"
+    },
+    "player3": {
+      "command": "C:/Users/Sebik/Documents/GitHub/space-dragons-proboj/proboj-files/player/player3.exe",
+      "language": "cpp"
+    },
+    "player4": {
+      "command": "C:/Users/Sebik/Documents/GitHub/space-dragons-proboj/proboj-files/player/player4.exe",
+      "language": "cpp"
     }
   },
   "processes_per_player": 1,

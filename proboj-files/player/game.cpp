@@ -7,10 +7,13 @@
 
 using namespace std;
 
+/*
+Runner works by sending a dot after each message to the player. This clears it.
+*/
 void clearcomm() {
     string dot;
     cin >> dot;
-    cerr << "Cleared comms with: " << dot << endl;
+    //cerr << "Cleared comms with: " << dot << endl;
 }
 
 /*
@@ -41,8 +44,6 @@ int main() {
     player.next_player = &player.enemyPlayers[0];
     clearcomm();
 
-    cerr << "here xd" << endl;
-
     // Pass the game settings to the participant's code
     int number_of_rounds, number_of_cards;
     cin >> number_of_rounds >> number_of_cards;
@@ -63,7 +64,7 @@ int main() {
     }
     clearcomm();
 
-    cerr << "here 2 xd" << endl;
+
     /*
     START OF DRAFT
     */
