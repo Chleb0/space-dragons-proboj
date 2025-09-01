@@ -1,7 +1,99 @@
 [proboj] 
 [proboj] 
+Cleared comms with: .
+here xd
+Cleared comms with: .
+here 2 xd
 [proboj] 
-[proboj] comment
+You picked card: ZA@@@@@BB
+Cleared comms with: .
+[proboj] 
+You picked card: *@@AAB@AB
+Cleared comms with: .
+[proboj] 
+You picked card: &@@B@@@A?
+Cleared comms with: .
+[proboj] 
+You picked card: D@@@AA@@C
+Cleared comms with: .
+[proboj] 
+You picked card: >@@A@A@AB
+Cleared comms with: .
+[proboj] 
+You picked card: TAA@@@@@B
+Cleared comms with: .
+[proboj] 
+You picked card: +@A@A@AC?
+Cleared comms with: .
+[proboj] 
+You picked card: 2@@A@@@BA
+Cleared comms with: .
+[proboj] 
+You picked card: -@@A@@@@D
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+You picked a card which was not in your hand. You played &@@B@@@A? instead.
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+You picked a card which was not in your hand. You played TAA@@@@@B instead.
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+You picked a card which was not in your hand. You played D@@@AA@@C instead.
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+You picked a card which was not in your hand. You played *@@AAB@AB instead.
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+You picked a card which was not in your hand. You played -@@A@@@@D instead.
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+You picked a card which was not in your hand. You played +@A@A@AC? instead.
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+You picked a card which was not in your hand. You played ZA@@@@@BB instead.
+[proboj] 
+Cleared comms with: .
 [proboj] process terminated
  exit: 0
  err: <nil>

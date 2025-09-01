@@ -1,29 +1,557 @@
 sex je super
-%@@AA@BA@
-pA@@@@@A>
-%@@AA@BA@
-bAA@@AA@A
-,@B@@@B@@
-[A@@@@@AB
--@@A@@@AC
-N@AA@B@@@
-!@C@A@@B?
-bAA@@AA@A
-!@C@A@@B?
-bAA@@AA@A
-,@B@@@B@@
-U@@@@@A@A
-!@C@A@@B?
-U@@@@@A@A
-!@C@A@@B?
-U@@@@@A@A
+TO PLAYER player1
+player1
+2
+player2
+
+.
+message status: OK
+TO PLAYER player1
+7
+9
+0
+1
+1
+A@@I
+@A@H
+@@@K
+B@@H
+@B@J
+@@BK
+A@@H
+
+.
+message status: OK
+TO PLAYER player2
+player2
+2
+player1
+
+.
+message status: OK
+TO PLAYER player2
+7
+9
+0
+1
+1
+A@@I
+@A@H
+@@@K
+B@@H
+@B@J
+@@BK
+A@@H
+
+.
+message status: OK
+TO PLAYER player1
+ZA@@@@@BB
+&@@B@@@A?
+'@@@B@@AB
++@A@A@AC?
+]@A@@@@@>
+X@@@@@@AA
+-@@A@@@@D
+m@@@@A@@?
+>@@A@A@AB
+
+.
+message status: OK
+READ PLAYER player1
+.
+status: OK
+&@@B@@@A?
+TO PLAYER player2
+9@B@@@@C>
+bAA@@@@A?
+D@@@AA@@C
+*@@AAB@AB
+TAA@@@@@B
+M@@@AA@A@
+e@@@@A@@A
+N@@@@@@@C
+2@@A@@@BA
+
+.
+message status: OK
+READ PLAYER player2
+.
+status: OK
+D@@@AA@@C
+TO PLAYER player2
+&@@B@@@A?
+'@@@B@@AB
++@A@A@AC?
+]@A@@@@@>
+X@@@@@@AA
+-@@A@@@@D
+m@@@@A@@?
+>@@A@A@AB
+
+.
+message status: OK
+READ PLAYER player2
+.
+status: OK
+X@@@@@@AA
+TO PLAYER player1
+9@B@@@@C>
+D@@@AA@@C
+*@@AAB@AB
+TAA@@@@@B
+M@@@AA@A@
+e@@@@A@@A
+N@@@@@@@C
+2@@A@@@BA
+
+.
+message status: OK
+READ PLAYER player1
+.
+status: OK
+TAA@@@@@B
+TO PLAYER player1
+&@@B@@@A?
+'@@@B@@AB
++@A@A@AC?
+X@@@@@@AA
+-@@A@@@@D
+m@@@@A@@?
+>@@A@A@AB
+
+.
+message status: OK
+READ PLAYER player1
+.
+status: OK
+'@@@B@@AB
+TO PLAYER player2
+9@B@@@@C>
+D@@@AA@@C
+TAA@@@@@B
+M@@@AA@A@
+e@@@@A@@A
+N@@@@@@@C
+2@@A@@@BA
+
+.
+message status: OK
+READ PLAYER player2
+.
+status: OK
+D@@@AA@@C
+TO PLAYER player2
+'@@@B@@AB
++@A@A@AC?
+X@@@@@@AA
+-@@A@@@@D
+m@@@@A@@?
+>@@A@A@AB
+
+.
+message status: OK
+READ PLAYER player2
+.
+status: OK
+-@@A@@@@D
+TO PLAYER player1
+D@@@AA@@C
+TAA@@@@@B
+M@@@AA@A@
+e@@@@A@@A
+N@@@@@@@C
+2@@A@@@BA
+
+.
+message status: OK
+READ PLAYER player1
+.
+status: OK
+TAA@@@@@B
+TO PLAYER player1
+'@@@B@@AB
++@A@A@AC?
+-@@A@@@@D
+m@@@@A@@?
+>@@A@A@AB
+
+.
+message status: OK
+READ PLAYER player1
+.
+status: OK
+>@@A@A@AB
+TO PLAYER player2
+TAA@@@@@B
+M@@@AA@A@
+e@@@@A@@A
+N@@@@@@@C
+2@@A@@@BA
+
+.
+message status: OK
+READ PLAYER player2
+.
+status: OK
+e@@@@A@@A
+TO PLAYER player2
+'@@@B@@AB
++@A@A@AC?
+-@@A@@@@D
+m@@@@A@@?
+
+.
+message status: OK
+READ PLAYER player2
+.
+status: OK
+m@@@@A@@?
+TO PLAYER player1
+TAA@@@@@B
+e@@@@A@@A
+N@@@@@@@C
+2@@A@@@BA
+
+.
+message status: OK
+READ PLAYER player1
+.
+status: OK
+e@@@@A@@A
+TO PLAYER player1
+'@@@B@@AB
++@A@A@AC?
+-@@A@@@@D
+
+.
+message status: OK
+READ PLAYER player1
+.
+status: OK
+-@@A@@@@D
+TO PLAYER player2
+e@@@@A@@A
+N@@@@@@@C
+2@@A@@@BA
+
+.
+message status: OK
+READ PLAYER player2
+.
+status: OK
+N@@@@@@@C
+TO PLAYER player2
+'@@@B@@AB
+-@@A@@@@D
+
+.
+message status: OK
+READ PLAYER player2
+.
+status: OK
+-@@A@@@@D
+TO PLAYER player1
+N@@@@@@@C
+2@@A@@@BA
+
+.
+message status: OK
+READ PLAYER player1
+.
+status: OK
+2@@A@@@BA
+TO PLAYER player1
+-@@A@@@@D
+
+.
+message status: OK
+READ PLAYER player1
+.
+status: OK
+-@@A@@@@D
+TO PLAYER player2
+N@@@@@@@C
+
+.
+message status: OK
+READ PLAYER player2
+.
+status: OK
+N@@@@@@@C
+TO PLAYER player1
+player1
+.
+message status: OK
+TO PLAYER player2
+player1
+.
+message status: OK
+TO PLAYER player1
+A@@H
+.
+message status: OK
+TO PLAYER player2
+A@@H
+.
+message status: OK
+READ PLAYER player1
+.
+status: OK
+TO PLAYER player1
+&@@B@@@A?
+.
+message status: OK
+TO PLAYER player2
+&@@B@@@A?
+.
+message status: OK
+READ PLAYER player2
+.
+status: OK
+TO PLAYER player1
+m@@@@A@@?
+.
+message status: OK
+TO PLAYER player2
+m@@@@A@@?
+.
+message status: OK
 player2 obtained a dragon
-player1 obtained a dragon
-player1 obtained a dragon
-player1 obtained a dragon
+TO PLAYER player1
+player2
+.
+message status: OK
+TO PLAYER player2
+player2
+.
+message status: OK
+TO PLAYER player1
+A@@H
+.
+message status: OK
+TO PLAYER player2
+A@@H
+.
+message status: OK
+READ PLAYER player2
+.
+status: OK
+TO PLAYER player1
+e@@@@A@@A
+.
+message status: OK
+TO PLAYER player2
+e@@@@A@@A
+.
+message status: OK
+READ PLAYER player1
+.
+status: OK
+TO PLAYER player1
+TAA@@@@@B
+.
+message status: OK
+TO PLAYER player2
+TAA@@@@@B
+.
+message status: OK
 player2 obtained a dragon
+TO PLAYER player1
+player2
+.
+message status: OK
+TO PLAYER player2
+player2
+.
+message status: OK
+TO PLAYER player1
+A@@H
+.
+message status: OK
+TO PLAYER player2
+A@@H
+.
+message status: OK
+READ PLAYER player2
+.
+status: OK
+TO PLAYER player1
+M@@@AA@A@
+.
+message status: OK
+TO PLAYER player2
+M@@@AA@A@
+.
+message status: OK
+READ PLAYER player1
+.
+status: OK
+TO PLAYER player1
+D@@@AA@@C
+.
+message status: OK
+TO PLAYER player2
+D@@@AA@@C
+.
+message status: OK
 player2 obtained a dragon
-player1 obtained a dragon
+TO PLAYER player1
+player2
+.
+message status: OK
+TO PLAYER player2
+player2
+.
+message status: OK
+TO PLAYER player1
+A@@H
+.
+message status: OK
+TO PLAYER player2
+A@@H
+.
+message status: OK
+READ PLAYER player2
+.
+status: OK
+TO PLAYER player1
+]@A@@@@@>
+.
+message status: OK
+TO PLAYER player2
+]@A@@@@@>
+.
+message status: OK
+READ PLAYER player1
+.
+status: OK
+TO PLAYER player1
+*@@AAB@AB
+.
+message status: OK
+TO PLAYER player2
+*@@AAB@AB
+.
+message status: OK
+player2 obtained a dragon
+TO PLAYER player1
+player2
+.
+message status: OK
+TO PLAYER player2
+player2
+.
+message status: OK
+TO PLAYER player1
+A@@H
+.
+message status: OK
+TO PLAYER player2
+A@@H
+.
+message status: OK
+READ PLAYER player2
+.
+status: OK
+TO PLAYER player1
+N@@@@@@@C
+.
+message status: OK
+TO PLAYER player2
+N@@@@@@@C
+.
+message status: OK
+READ PLAYER player1
+.
+status: OK
+TO PLAYER player1
+-@@A@@@@D
+.
+message status: OK
+TO PLAYER player2
+-@@A@@@@D
+.
+message status: OK
+player2 obtained a dragon
+TO PLAYER player1
+player2
+.
+message status: OK
+TO PLAYER player2
+player2
+.
+message status: OK
+TO PLAYER player1
+A@@H
+.
+message status: OK
+TO PLAYER player2
+A@@H
+.
+message status: OK
+READ PLAYER player2
+.
+status: OK
+TO PLAYER player1
+9@B@@@@C>
+.
+message status: OK
+TO PLAYER player2
+9@B@@@@C>
+.
+message status: OK
+READ PLAYER player1
+.
+status: OK
+TO PLAYER player1
++@A@A@AC?
+.
+message status: OK
+TO PLAYER player2
++@A@A@AC?
+.
+message status: OK
+player2 obtained a dragon
+TO PLAYER player1
+player2
+.
+message status: OK
+TO PLAYER player2
+player2
+.
+message status: OK
+TO PLAYER player1
+A@@H
+.
+message status: OK
+TO PLAYER player2
+A@@H
+.
+message status: OK
+READ PLAYER player2
+.
+status: OK
+TO PLAYER player1
+bAA@@@@A?
+.
+message status: OK
+TO PLAYER player2
+bAA@@@@A?
+.
+message status: OK
+READ PLAYER player1
+.
+status: OK
+TO PLAYER player1
+ZA@@@@@BB
+.
+message status: OK
+TO PLAYER player2
+ZA@@@@@BB
+.
+message status: OK
+player2 obtained a dragon
 [proboj] process terminated
  exit: 0
  err: <nil>

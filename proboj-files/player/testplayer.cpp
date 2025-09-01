@@ -21,17 +21,20 @@ int main() {
 
     // Player recieves their name
     string my_name; cin >> my_name;
+    cerr << my_name << endl;
     MyPlayer player = MyPlayer(my_name);
 
     // Player recieves the number of rounds
     int number_of_players;
     cin >> number_of_players;
+    cerr << number_of_players << endl;
 
     // Load the enemies and make a turn cycle.
     player.enemyPlayers.reserve(number_of_players - 1);
     for (int i = 1; i < number_of_players; i++)
     {
         string enem_name; cin >> enem_name;
+        cerr << enem_name << endl;
         Player enm = Player(enem_name);
         player.enemyPlayers.push_back(enm);
         if (i != 0) player.enemyPlayers[i-1].next_player = &player.enemyPlayers[i];
@@ -52,12 +55,14 @@ int main() {
     // Pass the environment settings to the participant
     bool crime, morale, research;
     cin >> crime >> morale >> research;
+    cerr << crime << morale << research << endl;
     player.environment = Environment(crime, morale, research);
 
     // Pass the dragon deck to the participant
     for (int i = 0; i < number_of_rounds; i++)
     {
         string dragonID; cin >> dragonID;
+        cerr << dragonID << endl;
         Dragon dragon = Dragon(dragonID);
         player.dragon_deck.push_back(dragon);
     }
@@ -74,15 +79,16 @@ int main() {
         for (int g = 0; g < number_of_cards-i; g++)
         {
             string cardid; cin >> cardid;
+            cerr << cardid << endl;
             draft_deck.emplace_back(cardid);
         }
+        clearcomm();
         string choice = player.DraftCard(draft_deck);
         choice = player.pickCard(draft_deck, choice);
 
         cerr << "You picked card: " << choice << endl;
         cout << choice << endl;
         cout << "." << endl;
-        clearcomm();
     }
 
     /*
@@ -95,8 +101,8 @@ int main() {
 
     for (int round = 0; round < number_of_rounds; round++)
     {
-        string starting_player; cin >> starting_player; clearcomm();
-        string dragonID; cin >> dragonID; clearcomm();
+        string starting_player; cin >> starting_player;
+        string dragonID; cin >> dragonID;
         Dragon dragon = Dragon(dragonID);
 
         // Find the player starting the round
@@ -123,11 +129,11 @@ int main() {
                 card = Card(choice);
                 cout << choice << endl;
                 cout << "." << endl;
-                cin >> choice; clearcomm(); // Clear the card just played
+                cin >> choice; // Clear the card just played
 
             } else
             {
-                string played; cin >> played; clearcomm();
+                string played; cin >> played;
                 card = Card(played);
                 turn->playCard(played);
             }

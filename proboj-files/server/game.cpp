@@ -50,6 +50,7 @@ struct Game
         cin >> rounds;
         cin >> cards;
         cin >> total_cards;
+        cin >> line; // clear the dot
 
         /*
         GENERATE GAME SETTINGS

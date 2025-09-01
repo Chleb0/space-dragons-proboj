@@ -1,5 +1,99 @@
 [proboj] 
-[proboj] comment
+[proboj] 
+[proboj] 
+Cleared comms with: .
+here xd
+Cleared comms with: .
+here 2 xd
+You picked card: bAA@@@@A?
+Cleared comms with: .
+[proboj] 
+You picked card: ]@A@@@@@>
+Cleared comms with: .
+[proboj] 
+You picked card: 9@B@@@@C>
+Cleared comms with: .
+[proboj] 
+You picked card: X@@@@@@AA
+Cleared comms with: .
+[proboj] 
+You picked card: M@@@AA@A@
+Cleared comms with: .
+[proboj] 
+You picked card: m@@@@A@@?
+Cleared comms with: .
+[proboj] 
+You picked card: e@@@@A@@A
+Cleared comms with: .
+[proboj] 
+You picked card: '@@@B@@AB
+Cleared comms with: .
+[proboj] 
+You picked card: N@@@@@@@C
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+You picked a card which was not in your hand. You played m@@@@A@@? instead.
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+You picked a card which was not in your hand. You played e@@@@A@@A instead.
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+You picked a card which was not in your hand. You played M@@@AA@A@ instead.
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+You picked a card which was not in your hand. You played ]@A@@@@@> instead.
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+You picked a card which was not in your hand. You played N@@@@@@@C instead.
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+You picked a card which was not in your hand. You played 9@B@@@@C> instead.
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
+You picked a card which was not in your hand. You played bAA@@@@A? instead.
+[proboj] 
+Cleared comms with: .
+[proboj] 
+Cleared comms with: .
 [proboj] process terminated
  exit: 0
  err: <nil>
