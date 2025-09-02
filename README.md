@@ -252,3 +252,36 @@ This file declares the `Player` class, which tracks each game participant.
 
 - **takeDamage(int damage)**  
   Applies incoming damage to shields first; any excess is added to `damage_taken`.  
+
+---
+
+### Communication.h
+
+This file handles communication between the server and the players using the runner.
+
+- `**handleStatus(Player\* player)**`  
+  Reads status from player.  
+  If not `"OK"`, sets `player->running = false` and logs the error.  
+
+- `**handleAnswer(Player\* player)**`  
+  Reads player's response.  
+  Returns `"random"` on error and sets `player->running = false`.   
+
+- **sendToPlayer(Player\* player, const string message, const string comment)**  
+  Sends a message to one player. Comment is sent to the players log.
+
+- **sendAll(vector<Player>& players, const string message, const string comment)**  
+  Sends the same message to every player using `sendToPlayer()`.  
+
+- **readCard(Player\* player)**  
+  Reads card ID from a player.  Returns `"random"` if there’s an error (`player->running = false`).  
+
+- **draftFromDeck(Player\* player, vector<Card>& deck)**  
+  Sends full deck to player, expects a pick.  
+  - Calls `player->pickCard(deck, choice)`.  
+  - Picks random card on invalid input.  
+
+- **playCardOnTurn(Player\* player)**  
+  Asks player to play a card.  
+  - Calls `player->playCard(choice)`.  
+  - Plays random card on error.  

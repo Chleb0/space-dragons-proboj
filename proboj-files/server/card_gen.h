@@ -14,23 +14,32 @@ static mt19937 gen(rd());
 
 struct CardGenerator
 {
+    // Number of cards to generate
     int cards;
+
+    // Max default score for a card without any abilities
     int max_score;
+
     char zero;
+
+    // Maximum and minimum final scores of the cards
     int max_fin_score;
     int min_fin_score = 0;
+
+    // Maximum and minimul final scores of the cards after the abilities have been handed out.
     int ab_max_score;
     int ab_min_score;
-
+    
+    // Constants
     const int MAX_ABILITIES = 5;
     const vector<double> ability_probability = {19, 27, 15, 7, 1, 0.1};
     const int MAX_ATTRIBUTES = 4;
     const vector<double> attribute_probability = {23, 27, 24, 9, 3};
     const vector<double> pts_probality = {1, 20, 50, 20, 1};
-
     const vector<double> dragon_dist = {5, 9, 6};
     vector<vector<string>> dragon_attributes = {{"@@@"},{"A@@","@A@","@@A"}, {"B@@","@B@","@@B","AA@","A@A","@AA"}};
 
+    // Evaluation of the abilities
     int shield_eval(int shield) {return shield*(max_score/2.32) + shield*shield*(max_score/8.53);}
     int attack_eval(int attack) {return attack*(max_score/3.2);}
     int damage_eval(int damage) {return -damage*(max_score/2.28);}
@@ -46,6 +55,10 @@ struct CardGenerator
     vector<int> at_min;
     vector<int> at_max;
 
+    /*
+    Generates all possible combinations of attributes within the allowed range (of number of attributes).
+    Puts the generated combinations in the attribute combinations vector.
+    */
     void generate_attribue_combination(int altering, string combination, int depth) {
         if (depth == MAX_ATTRIBUTES+1 ) return;
         if (altering == 3) return;
@@ -61,6 +74,10 @@ struct CardGenerator
         }
     }
 
+    /*
+    Generates all possible combinations of abilities within the allowed range (of number of abilities).
+    Puts the generated combinations in the abilities combinations vector.
+    */
     void generate_ability_combination(int altering, string combination, bool has_damage, int depth) {
         if (depth == MAX_ABILITIES+1) return;
         if (altering == 4) return;
@@ -80,6 +97,9 @@ struct CardGenerator
         }
     }
 
+    /*
+    Evaluates the card's abilities with a score.
+    */
     int evaluate_ability(string combination) {
         int damage = combination[0] -ACIIOFFSET;
         int attack = combination[1] -ACIIOFFSET;
@@ -93,6 +113,9 @@ struct CardGenerator
         return score;
     }
 
+    /*
+    Evaluates the card's attributes with a score.
+    */
     int evaluate_attribute(string combination) {
         int crime = combination[0] -ACIIOFFSET;
         int morale = combination[1] -ACIIOFFSET;
@@ -104,18 +127,24 @@ struct CardGenerator
         return score;
     }
 
+    /*
+    Decided abilities for the card.
+    The input is the lower and upper bound for how strong/weak the abilities are able to be.
+    */
     string decide_abilities(int lc, int hc) {
         vector <double> weights = ability_probability;
         for (int i = 0; i < MAX_ABILITIES+1; i++)
         {
             if ((ab_min[i] > hc || lc > ab_max[i]))
             {
+                // If there is no possibility of this number of abilities, remove it.
                 weights[i] = 0;
             }
         }
         discrete_distribution<> dist(weights.begin(), weights.end());
         int n_of_abs = dist(gen);
 
+        // Count the valid ability combinations and choose one.
         int valid = 0;
         for (auto &x: ability_combinations[n_of_abs]) {
             if (lc <= x.first && x.first <= hc) valid++;
@@ -138,6 +167,10 @@ struct CardGenerator
         return ability_combinations[n_of_abs][pull].second;
     }
 
+    /*
+    Decided attributes for the card.
+    The input is the lower and upper bound for how strong/weak the attributes are able to be.
+    */
     string decide_attributes(int lc, int hc) {
         vector <double> weights = attribute_probability;
         discrete_distribution<> dist(weights.begin(), weights.end());
