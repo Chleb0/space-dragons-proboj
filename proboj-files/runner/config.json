@@ -1,28 +1,21 @@
 {
-  "server": "C:/Users/Sebik/Documents/GitHub/space-dragons-proboj/proboj-files/server/game.exe",
+  "server": "path/to/server",
   "players": {
     "player1": {
-      "command": "C:/Users/Sebik/Documents/GitHub/space-dragons-proboj/proboj-files/player/player1.exe",
-      "language": "cpp"
+      "command": "path/to/player1",
+      "language": "language"
     },
     "player2": {
-      "command": "C:/Users/Sebik/Documents/GitHub/space-dragons-proboj/proboj-files/player/player2.exe",
-      "language": "cpp"
-    },
-    "player3": {
-      "command": "C:/Users/Sebik/Documents/GitHub/space-dragons-proboj/proboj-files/player/player3.exe",
-      "language": "cpp"
-    },
-    "player4": {
-      "command": "C:/Users/Sebik/Documents/GitHub/space-dragons-proboj/proboj-files/player/player4.exe",
-      "language": "cpp"
+      "command": "path/to/player1",
+      "language": "language"
     }
   },
   "processes_per_player": 1,
   "timeout": {
-    "cpp": 5
+    "language": 5,
+    "other_laguage": 5
   },
   "disable_logs": false,
   "disable_gzip": true,
-  "game_root": "C:/Users/Sebik/Documents/GitHub/space-dragons-proboj/log"
+  "game_root": "path/to/game_root"
 }
