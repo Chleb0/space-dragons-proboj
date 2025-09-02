@@ -9,8 +9,8 @@
 
 using namespace std;
 
-int ACIIOFFSET=64;
-int ACIIVALOFFSET=32;
+constexpr int ACIIOFFSET=64;
+constexpr int ACIIVALOFFSET=32;
 
 struct Card
 {
