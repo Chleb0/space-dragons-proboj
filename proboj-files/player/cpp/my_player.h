@@ -39,7 +39,7 @@ class MyPlayer : public Player
             static mt19937 gen(rd());
             uniform_int_distribution<> dis(0, static_cast<int>(cards.size()) - 1);
             card = cards.begin() + dis(gen);
-            // cerr << "You picked a card which was not in the card offer for this round. You took " << card->ID << " instead." << endl;
+            cerr << "You picked a card which was not in the card offer for this round. You took " << card->ID << " instead." << endl;
         }
 
         string cardid = card->ID;
@@ -86,12 +86,12 @@ class MyPlayer : public Player
         return playedCard.ID;
     }
 
-    string DraftCard(vector<Card>& cards) {
+    string DraftCard(vector<Card> cards) {
         // Contestant's code
         return "cardID";
     }
 
-    string PlayCard(const Dragon& dragon, int my_turn) {
+    string PlayCardOnTurn(Dragon dragon, vector<pair<Card, Player*>> played_cards) {
         // Contestant's code
         return "cardID";
     }

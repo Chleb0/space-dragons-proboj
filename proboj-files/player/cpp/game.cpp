@@ -119,7 +119,7 @@ int main() {
             Card card = Card("nothing");
             if (turn == &player)
             {
-                string choice = player.PlayCard(dragon, i);
+                string choice = player.PlayCardOnTurn(dragon, played_cards);
                 choice = player.playCard(choice);
                 card = Card(choice);
                 cout << choice << endl;
