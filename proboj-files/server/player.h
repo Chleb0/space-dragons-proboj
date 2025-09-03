@@ -11,7 +11,7 @@ class Player
 {
     public:
 
-    string playerName;
+    string player_name;
     Player* next_player;
 
     // For communication checks
@@ -37,8 +37,8 @@ class Player
     // Points for final ranking
     int points = 0;
 
-    Player(const string& playerName)
-        : playerName(playerName),
+    Player(const string& player_name)
+        : player_name(player_name),
 
           shield_active(0),
           damage_taken(0),
@@ -67,7 +67,7 @@ class Player
             card = cards.begin() + dis(gen);
         }
 
-        cerr << "Player " << playerName << " picked card: " << card->ID << endl;
+        cerr << "Player " << player_name << " picked card: " << card->ID << endl;
         hand.push_back(*card);
         cards.erase(card);
     }
@@ -90,33 +90,33 @@ class Player
         }
 
         // Play the card
-        Card playedCard = *card;
-        played.push_back(playedCard);
+        Card played_card = *card;
+        played.push_back(played_card);
         hand.erase(card);
 
         // Update player attributes
-        card_points += playedCard.points;
-        crime_sum += playedCard.crime;
-        morale_sum += playedCard.morale;
-        research_sum += playedCard.research;
+        card_points += played_card.points;
+        crime_sum += played_card.crime;
+        morale_sum += played_card.morale;
+        research_sum += played_card.research;
 
         // Apply shield
-        if (playedCard.shield > 0) {
-            shield_active += playedCard.shield;
+        if (played_card.shield > 0) {
+            shield_active += played_card.shield;
         }
 
         // Apply damage
-        if (playedCard.damage > 0) {
-            takeDamage(playedCard.damage);
+        if (played_card.damage > 0) {
+            takeDamage(played_card.damage);
         }
 
         // Apply repair
-        if (playedCard.repair > 0) {
-            damage_taken -= playedCard.repair;
+        if (played_card.repair > 0) {
+            damage_taken -= played_card.repair;
             if (damage_taken < 0) damage_taken = 0;
         }
 
-        return playedCard;
+        return played_card;
     }
 
     /*
@@ -128,7 +128,7 @@ class Player
         morale_sum += dragon.morale;
         research_sum += dragon.research;
 
-        cerr << playerName << " won the dragon "+dragon.ID << endl;
+        cerr << player_name << " won the dragon "+dragon.ID << endl;
     }
 
     /*

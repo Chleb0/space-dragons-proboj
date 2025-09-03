@@ -27,7 +27,7 @@ void handleStatus(Player* player) {
     if (status != "OK")
     {
         player->running = false;
-        cerr << "Player " << player->playerName << " produced the following error message: "<< errmsg << endl;
+        cerr << "Player " << player->player_name << " produced the following error message: "<< errmsg << endl;
     }
 }
 
@@ -47,7 +47,7 @@ string handleAnswer(Player* player) {
             getline(cin, line);
             errmsg += line + "\n";
         } while (line != ".");
-        cerr << "Player " << player->playerName << "produced this error message: " << errmsg << endl;
+        cerr << "Player " << player->player_name << "produced this error message: " << errmsg << endl;
         return "random";
 
     } else
@@ -71,7 +71,7 @@ void sendToPlayer(Player* player, const string message, const string comment) {
         return;
     }
     
-    cout << "TO PLAYER " << player->playerName << " " << comment << endl;
+    cout << "TO PLAYER " << player->player_name << " " << comment << endl;
     cout << message << endl;
     cout << "." << endl;
     handleStatus(player);
@@ -97,7 +97,7 @@ string readCard(Player* player) {
         return "random";
     }
     
-    cout << "READ PLAYER " << player->playerName << endl;
+    cout << "READ PLAYER " << player->player_name << endl;
     cout << "." << endl;
     return handleAnswer(player);
 }

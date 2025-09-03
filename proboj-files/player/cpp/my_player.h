@@ -14,7 +14,7 @@ class MyPlayer : public Player
 {
     public:
 
-    vector<Player> enemyPlayers;
+    vector<Player> enemy_players;
     vector<Dragon> dragon_deck = {};
 
     int number_of_rounds;
@@ -65,25 +65,25 @@ class MyPlayer : public Player
             cerr << "You picked a card which was not in your hand. You played " << card->ID << " instead." << endl;
         }
 
-        Card playedCard = *card;
-        played.push_back(playedCard);
+        Card played_card = *card;
+        played.push_back(played_card);
         hand.erase(card);
 
-        card_points += playedCard.points;
-        crime_sum += playedCard.crime;
-        morale_sum += playedCard.morale;
-        research_sum += playedCard.research;
+        card_points += played_card.points;
+        crime_sum += played_card.crime;
+        morale_sum += played_card.morale;
+        research_sum += played_card.research;
 
-        if (playedCard.shield > 0) shield_active += playedCard.shield;
+        if (played_card.shield > 0) shield_active += played_card.shield;
 
-        if (playedCard.damage > 0) takeDamage(playedCard.damage);
+        if (played_card.damage > 0) takeDamage(played_card.damage);
 
-        if (playedCard.repair > 0) {
-            damage_taken -= playedCard.repair;
+        if (played_card.repair > 0) {
+            damage_taken -= played_card.repair;
             if (damage_taken < 0) damage_taken = 0;
         }
 
-        return playedCard.ID;
+        return played_card.ID;
     }
 
     string DraftCard(vector<Card> cards) {

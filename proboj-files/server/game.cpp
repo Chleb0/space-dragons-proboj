@@ -31,7 +31,7 @@ struct Game
     Loads the game configuration sent by the Runner and generates additional config for the game.
     Passes the game configuration to the players.
     */
-    void setup_game() {
+    void setupGame() {
         // Load players
         string line;
         getline(cin, line); // ignore first message
@@ -66,12 +66,12 @@ struct Game
 
         // Generate dragon deck and card deck
         card_gen.setup(total_cards);
-        card_deck = card_gen.generate_cards();
-        dragon_deck = card_gen.generate_dragon_deck(rounds);
+        card_deck = card_gen.generateDeck();
+        dragon_deck = card_gen.generateDragonDeck(rounds);
 
         // Randomise environment
         env = Environment();
-        env.randomise_environment();
+        env.randomiseEnvironment();
 
         /*
         SERVER TAKES CONTROL
@@ -100,7 +100,7 @@ struct Game
             Player* current = &players[i];
             string player_config = "";
             player_config += (
-                current->playerName + "\n" + 
+                current->player_name + "\n" + 
                 to_string(number_of_players) + "\n"
             );
 
@@ -108,7 +108,7 @@ struct Game
             Player* iter = current->next_player;
             while (iter != current)
             {
-                player_config += iter->playerName + "\n";
+                player_config += iter->player_name + "\n";
                 iter = iter->next_player;
             }
 
@@ -160,7 +160,7 @@ struct Game
         Dragon dragon = dragon_deck.back();
         dragon_deck.pop_back();
         Player* playing = first_player;
-        sendAll(players, playing->playerName, "Sending beggining player this round: "+playing->playerName);
+        sendAll(players, playing->player_name, "Sending beggining player this round: "+playing->player_name);
         sendAll(players, dragon.ID, "Sending the dragon for this round: "+dragon.ID);
 
         Player* winning = first_player;
@@ -172,8 +172,8 @@ struct Game
         {
             Card played_card = playCardOnTurn(playing);
             played_cards.push_back({played_card, playing});
-            sendAll(players, played_card.ID, playing->playerName+" played card "+played_card.ID);
-            cerr << playing->playerName+" played card "+played_card.ID << endl;
+            sendAll(players, played_card.ID, playing->player_name+" played card "+played_card.ID);
+            cerr << playing->player_name+" played card "+played_card.ID << endl;
 
             if (played_card.value > highest) winning = playing; highest = played_card.value;
             playing = playing->next_player;
@@ -331,7 +331,7 @@ struct Game
         cout << "SCORES" << endl;
         for (auto& player : players) {
             player.points += player.dragon_points + player.card_points;
-            cout << player.playerName << " " << player.points << endl;
+            cout << player.player_name << " " << player.points << endl;
         }
         cout << "." << endl;
         cout << "END" << endl;
@@ -341,7 +341,7 @@ struct Game
 
 int main() {
     Game game = Game();
-    game.setup_game();
+    game.setupGame();
     game.draft();
     game.game();
     game.assignEnvPoints();

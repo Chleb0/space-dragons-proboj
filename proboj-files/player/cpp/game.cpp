@@ -31,17 +31,17 @@ int main() {
     cin >> number_of_players;
 
     // Load the enemies and make a turn cycle.
-    player.enemyPlayers.reserve(number_of_players - 1);
+    player.enemy_players.reserve(number_of_players - 1);
     for (int i = 1; i < number_of_players; i++)
     {
         string enem_name; cin >> enem_name;
         Player enm = Player(enem_name);
-        player.enemyPlayers.push_back(enm);
-        if (i != 0) player.enemyPlayers[i-1].next_player = &player.enemyPlayers[i];
+        player.enemy_players.push_back(enm);
+        if (i != 0) player.enemy_players[i-1].next_player = &player.enemy_players[i];
     }
 
-    player.enemyPlayers[number_of_players-2].next_player = &player;
-    player.next_player = &player.enemyPlayers[0];
+    player.enemy_players[number_of_players-2].next_player = &player;
+    player.next_player = &player.enemy_players[0];
     clearcomm();
 
     // Pass the game settings to the participant's code
@@ -104,9 +104,9 @@ int main() {
         Player* turn = &player;
         for (int i = 0; i < number_of_players-1; i++)
         {
-            if (starting_player == player.enemyPlayers[i].playerName)
+            if (starting_player == player.enemy_players[i].player_name)
             {
-                turn = &player.enemyPlayers[i];
+                turn = &player.enemy_players[i];
             }
         }
 

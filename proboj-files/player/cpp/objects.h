@@ -9,8 +9,8 @@
 
 using namespace std;
 
-constexpr int ACIIOFFSET=64;
-constexpr int ACIIVALOFFSET=32;
+int ACIIOFFSET=64;
+int ACIIVALOFFSET=32;
 
 struct Card
 {
@@ -83,7 +83,7 @@ struct Environment
     Picks a random boolean for each attribute in play (crime, morale, research).
     This determines whether this attribute adds or subtracts points.
     */
-    void randomise_environment() {
+    void randomiseEnvironment() {
         random_device rd;
         mt19937 gen(rd());
         uniform_int_distribution<int> dist(0, 1);

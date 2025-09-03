@@ -10,7 +10,7 @@ using namespace std;
 class Player
 {
     public:
-    string playerName;
+    string player_name;
 
     // Player's cards
     vector<Card> played;
@@ -29,8 +29,8 @@ class Player
     int morale_sum = 0;
     int research_sum = 0;
 
-    Player(const string& playerName)
-        : playerName(playerName),
+    Player(const string& player_name)
+        : player_name(player_name),
 
           shield_active(0),
           damage_taken(0),
