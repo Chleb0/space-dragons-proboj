@@ -209,7 +209,7 @@ This file declares three structures:
   - **`randomise_environment`** : Randomizes these three booleans.  
   - **`print`** : Outputs the current environment settings as text.  
 
-The constants `ACIIOFFSET` and `ACIIVALOFFSET` are used throughout the project to convert characters into values.
+The constants `ACIIOFFSET` and `ACIIVALOFFSET` defined in this file are used in the project to convert characters into values.
 
 ---
 
@@ -255,7 +255,7 @@ This file declares the `Player` class, which tracks each game participant.
 
 ---
 
-### Communication.h
+### communication.h
 
 This file handles communication between the server and the players using the runner.
 
@@ -287,7 +287,7 @@ This file handles communication between the server and the players using the run
   - Plays random card on error. 
 
 --- 
-### CardGen.h
+### card_gen.h
 
 Defines the class CardGenerator. This can be used to generate cards for games. I will not go into more detail in here, for more information about the process, check `card_generation.md`.
 
@@ -306,15 +306,89 @@ Defines the class CardGenerator. This can be used to generate cards for games. I
 - **`decide_attributes(lc, hc)`**  
   Randomly pick attributes within score bounds.  
 
-- **`decide_points(score)`**  
+- **`decide_points`**  
   Assign card point value.  
 
-- **`generate_cards() / gen_card(value)`**  
+- **`generate_cards / gen_card(value`**  
   Create full card deck or single card ID with balanced stats.  
 
-- **`setup(n_cards)`**  
+- **`setup`**  
   Generate combinations, bounds, and set scoring limits.  
 
-- **`generate_dragon_deck(dragons)`**  
+- **`generate_dragon_deck`**  
   Generate a deck of dragons for the game.  
 
+---
+
+### game.cpp (Game loop)
+
+This file simulates the game. The functions in this file reflect the stages of the game. The order of communication and it's for can be found in `protocols/runner_server_protocol.md` and `protocols/server_player_protocol.md`
+
+- **`setup_game`**  
+    This function handles the setup of the game.
+  - Generates card/dragon decks with `CardGenerator`.  
+  - Randomizes environment.  
+  - Sends config to all players.  
+
+- **`draft`**  
+     Handles the draft phase of the game in it's entirety.
+
+- **`round`**  
+   Handles one round of play and returns a pointer to the player who won the round.
+
+- **`game`**  
+   Runs all rounds, winner of each round starts the next.  
+
+- **`assignEnvPoints`**  
+   Adjusts `points` based on environment.  
+
+- **`returnScores`**  
+   Calculates and returns and saves the final scores.   
+
+- **`main`**  
+  - Creates game, runs full sequence:  
+    `setup_game → draft → game → assignEnvPoints → returnScores`.
+
+---
+
+## Player Components
+
+- **objects** : Declares game objects (`Card`, `Dragon`, `Environment`).  
+- **player** : Declares the `Player` class.  
+- **my_player** :  Declares the `MyPlayer` class, derived from the `Player` class. The contestant's code is here. 
+- **game** : Main player-server communication logic.  
+
+--- 
+
+### objects
+
+Same as in the server files.
+
+---
+
+### player
+
+Same as the `Player` class in the server files, with the following exceptions:
+
+  - `hand` : This list is not available, as the player's code is unable to see other player's hands.
+  - `running`:  Only used by the server.
+  - `pick_card`: This function only intercats with the player's hand, so it is absent.
+
+---
+
+### my_player
+
+Same as the `Player` class in the server files, with the exception of all the information about the game stored in it. Check `Participant's guide/Access to information`.
+
+---
+
+### game
+
+This class solves the main logic behind the game and the sequencing.
+
+It executes the three following stages:
+  - **Game setup** : it reads the game configuration of the game, sets up the `Player` and `MyPlayer` classes.
+  - **Draft phase** : executes the draft part of the game, calling the `PickCard` function of `MyPlayer`.
+  - **Hunt phase** : executes the hunt phase of the game, calling the `PlayCardOnTurn` function of `MyPlayer`.
+
+The player then shuts down. More information about the player's stdin can be found in `server_player_protocol.md`.
