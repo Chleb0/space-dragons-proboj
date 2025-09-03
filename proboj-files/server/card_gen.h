@@ -59,18 +59,20 @@ struct CardGenerator
     Generates all possible combinations of attributes within the allowed range (of number of attributes).
     Puts the generated combinations in the attribute combinations vector.
     */
-    void generate_attribue_combination(int altering, string combination, int depth) {
+    void generate_attribute_combination(int altering, string combination, int depth) {
         if (depth == MAX_ATTRIBUTES+1 ) return;
         if (altering == 3) return;
         
-        generate_attribue_combination(altering+1, combination, depth);
+        // Either skip this attribute and add 0 of it.
+        generate_attribute_combination(altering+1, combination, depth);
 
         for (int i = 1; i + depth < MAX_ATTRIBUTES+1; i++)
         {
+            // Or add every possible amout of this attribute.
             combination[altering] = combination[altering] +1;
             int score = evaluate_attribute(combination);
             attribute_combinations[depth+i].push_back({score, combination});
-            generate_attribue_combination(altering+1, combination, depth+i);
+            generate_attribute_combination(altering+1, combination, depth+i);
         }
     }
 
@@ -81,14 +83,17 @@ struct CardGenerator
     void generate_ability_combination(int altering, string combination, bool has_damage, int depth) {
         if (depth == MAX_ABILITIES+1) return;
         if (altering == 4) return;
+        // Cards can't have both damage and shield/repair.
         if (has_damage && altering > 1) return;
         
+        // Skip ability.
         generate_ability_combination(altering+1, combination, has_damage, depth);
         
         if (!altering) has_damage = true;
         
         for (int i = 1; i + depth < MAX_ABILITIES+1; i++)
         {
+            // Add every amount of this ability.
             combination[altering] = combination[altering] +1;
             int score = evaluate_ability(combination);
 
@@ -181,6 +186,7 @@ struct CardGenerator
             if (lc <= x.first && x.first <= hc) valid++;
         }
 
+        // If we choose a number of attributes that is not able to fit in the lower and upper bound, we choose a random combination.
         if (valid == 0)
         {
             uniform_int_distribution<> rand_idx(0, attribute_combinations[n_of_atts].size()-1);
@@ -206,6 +212,9 @@ struct CardGenerator
         return attribute_combinations[n_of_atts][pull].second;
     }
 
+    /*
+    This function decided points for the card.
+    */
     string decide_points(int score) {
         int chunk = max_fin_score / pts_probality.size();
         discrete_distribution<> dist(pts_probality.begin(), pts_probality.end());
@@ -217,6 +226,9 @@ struct CardGenerator
         return out;
     }
 
+    /*
+    Generates and returns a deck of cards.
+    */
     vector<Card> generate_cards() {
         vector<Card> out;
         out.reserve(cards);
@@ -228,6 +240,9 @@ struct CardGenerator
         return out;
     }
 
+    /*
+    Generates and returns a card with a certain value.
+    */
     Card gen_card(int value) {
         int score = (value-1)*(value-1) - (cards-value)*(cards-value);
         
@@ -251,25 +266,36 @@ struct CardGenerator
         return card;
     }
 
+    /*
+    This function prepares everything in order for the cards to be generated,
+    such as generating attribute and ability combinations.
+    */
     void setup(int n_cards) {
+        // Initialize constants
         cards = n_cards; 
         zero = ACIIOFFSET;
         max_score = cards*cards;
         max_fin_score = max_score - max_score/6;
         ab_max_score = max_score;
         ab_min_score = max_fin_score - ab_max_score;
+
+        // Initialize vectors
         ability_combinations.resize(MAX_ABILITIES+1);
         ab_max.resize(MAX_ABILITIES+1, 0);
         ab_min.resize(MAX_ABILITIES+1, 0);
         attribute_combinations.resize(MAX_ATTRIBUTES+1);
         at_max.resize(MAX_ATTRIBUTES+1, 0);
         at_min.resize(MAX_ATTRIBUTES+1, 0);
+
+        // Add blank combinations
         string blank(4, zero);
         ability_combinations[0].push_back({0,blank});
-        generate_ability_combination(0,blank,false,0);
         blank = string(3, zero);
         attribute_combinations[0].push_back({evaluate_attribute(blank),blank});
-        generate_attribue_combination(0,blank,0);
+
+        // Generate combinations
+        generate_ability_combination(0,blank,false,0);
+        generate_attribute_combination(0,blank,0);
 
         for (auto &deck: attribute_combinations) {
             sort(deck.begin(), deck.end());
@@ -292,19 +318,29 @@ struct CardGenerator
 
     CardGenerator() {}
 
+    /*
+    Generates and returns a dragon deck of a given size.
+    */
     vector <Dragon> generate_dragon_deck(int dragons) {
         vector <Dragon> out;
 
         for (int i = 0; i < dragons; i++)
         {
             string dragid = "@";
-            discrete_distribution<> dist(dragon_dist.begin(), dragon_dist.end());
-            int dragon_atts = dist(gen);
-            uniform_int_distribution<> attr_dist(0, dragon_attributes[dragon_atts].size() - 1);
-            int attr_idx = attr_dist(gen);
+
+            // Decide the number of attributes the dragon has
+            discrete_distribution<> attribute_dist(dragon_dist.begin(), dragon_dist.end());
+            int dragon_atts = attribute_dist(gen);
+
+            // Decide the combination of attributes
+            uniform_int_distribution<> attr_comb_dist(0, dragon_attributes[dragon_atts].size() - 1);
+            int attr_idx = attr_comb_dist(gen);
+
+            // Decide points for the dragon
             uniform_int_distribution<> pts_roll(8, 12);
             int points = pts_roll(gen);
             dragid[0] = points + ACIIOFFSET;
+
             dragid = dragon_attributes[dragon_atts][attr_idx] + dragid;
             Dragon new_dragon(dragid);
             out.push_back(new_dragon);
