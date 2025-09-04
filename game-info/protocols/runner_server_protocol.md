@@ -12,6 +12,7 @@ This finishes config.
 CONFIG
 bobby og sans zhar chino
 7 9 80
+.
 ```
 ---
 

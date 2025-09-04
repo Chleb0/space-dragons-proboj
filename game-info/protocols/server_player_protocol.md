@@ -39,6 +39,23 @@ Next, the player recieves three bits of information, each indicating (in this or
 
 Lastly, the dragon deck is shown to the player. The server sends a dragon card ID for each round to be played.
 
+*Example communication:*
+```
+7
+9
+1
+0
+1
+@A@K
+B@@L
+@@BL
+@@@J
+A@@I
+@@@I
+@A@H
+.
+```
+
 ---
 
 ## Draft phase
@@ -46,6 +63,30 @@ Lastly, the dragon deck is shown to the player. The server sends a dragon card I
 In the draft phase, the player will recieve a deck of cards in each round. In each round, the player is expected to reply with a card from the offer.
 
 In each round, the number of cards in the deck will decrease by 1.
+
+```
+_@@@AA@@?
+F@B@@B@B@
+G@@@@@@AC
+E@@@@@@@C
+-@@A@@AAC
+n@@@@B@@A
+0@@A@@A@C
+OAA@@@A@B
+YA@@@@@BD
+.
+1@@@A@ABB
+W@@@@@@@A
+A@@AA@@@?
+@@@@BA@A@
+hA@@@@AAA
++@@AAAA@B
+L@A@@AA@A
+g@@@@A@@?
+.
+
+... same thing
+```
 
 ---
 
@@ -58,3 +99,21 @@ In consecutive rounds, the server will message everyone the name of the player p
 Then, the server will send every player each card being played. Each player is expected to message the server the card they wish to play on their turn.
 
 If the player messages a card they do not have or an invalid card, they will play a random card from their hand.
+
+*Example communication in 1 round:`
+```
+sans
+.
+@A@H
+.
+PAB@@@@@A
+.
+<@A@@@AAA
+.
+lAA@@AA@?
+.
+XAB@@B@@B
+.
+fBA@@@A@B
+.
+```

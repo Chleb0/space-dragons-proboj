@@ -287,15 +287,14 @@ struct CardGenerator
         at_max.resize(MAX_ATTRIBUTES+1, 0);
         at_min.resize(MAX_ATTRIBUTES+1, 0);
 
-        // Add blank combinations
+        // Add blank combinations and generate combinations
         string blank(4, zero);
         ability_combinations[0].push_back({0,blank});
+        generateAbilityCombination(0,blank,false,0);
+
         blank = string(3, zero);
         attribute_combinations[0].push_back({evaluateAttribute(blank),blank});
-
-        // Generate combinations
-        generateAbilityCombination(0,blank,false,0);
-        generateAttributeCombination(0,blank,0);
+        generateAttributeCombination(0,blank,0);      
 
         for (auto &deck: attribute_combinations) {
             sort(deck.begin(), deck.end());
