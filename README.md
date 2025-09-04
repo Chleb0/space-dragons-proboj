@@ -50,7 +50,7 @@ If the card ID is not in your hand, the server will choose a random card for you
 
 From the `MyPlayer` class, you can access the following information about every player (including yourself):
 
-- **`playerName`** : A string containing the player name.  
+- **`player_name`** : A string containing the player name.  
 - **`next_player`** : A pointer to the next player in turn order.  
 - **`played`** : A vector containing cards that this player has already played.  
 
@@ -67,7 +67,7 @@ From the `MyPlayer` class, you can access the following information about every 
   - **`morale_sum`** : Integer, sum of morale points.  
   - **`research_sum`** : Integer, sum of research points.  
 
-This information is stored in the `enemyPlayers` array of the `MyPlayer` class.  
+This information is stored in the `enemy_players` array of the `MyPlayer` class.  
 
 You can also access information about the game itself:
 - **`dragon_deck`** : List containing all dragons appearing in the game.  
