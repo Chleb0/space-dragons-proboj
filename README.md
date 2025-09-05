@@ -291,31 +291,31 @@ This file handles communication between the server and the players using the run
 
 Defines the class CardGenerator. This can be used to generate cards for games. I will not go into more detail in here, for more information about the process, check `card_generation.md`.
 
-- **`generate_attribute_combination`**  
+- **`generateAttributeCombination`**  
   Build all attribute combinations with scores.  
 
-- **`generate_ability_combination`**  
+- **`generateAbilityCombination`**  
   Build all valid ability combinations with scores.  
 
-- **`evaluate_ability / evaluate_attribute`**  
+- **`evaluateAbility / evaluateAttribute`**  
   Set constants for the impact of abilities and attributes.  
 
-- **`decide_abilities(lc, hc)`**  
+- **`decideAbilities(lc, hc)`**  
   Randomly pick abilities within score bounds.  
 
-- **`decide_attributes(lc, hc)`**  
+- **`decideAttributes(lc, hc)`**  
   Randomly pick attributes within score bounds.  
 
-- **`decide_points`**  
+- **`decidePoints`**  
   Assign card point value.  
 
-- **`generate_cards / gen_card(value`**  
+- **`generateCards / genCard(value`**  
   Create full card deck or single card ID with balanced stats.  
 
 - **`setup`**  
   Generate combinations, bounds, and set scoring limits.  
 
-- **`generate_dragon_deck`**  
+- **`generateDragonDeck`**  
   Generate a deck of dragons for the game.  
 
 ---
